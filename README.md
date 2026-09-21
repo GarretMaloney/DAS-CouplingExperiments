@@ -47,7 +47,7 @@ A second experiment (cables epoxied to the pipe) isolates cable-construction eff
 
 ### Acquisition
 
-Strain rate is recorded with a **Silixa iDAS** at **1 kHz**, **~33 ft** gauge length, and **~0.82 ft** channel spacing. Each frequency / displacement combination is sampled for at least **10 periods**. Raw files are National Instruments **TDMS**.
+Strain rate is recorded with a **Silixa iDAS** at **1 kHz**, **10 m** gauge length, and **0.25 m** channel spacing. Each frequency / displacement combination is sampled for at least **10 periods**. Raw files are National Instruments **TDMS**.
 
 ## Example figure sets
 
