@@ -37,6 +37,12 @@ Freq = None
 show_plots = True
 save_figures = False
 
+# Cable legend/color mapping (kept consistent across all line plots)
+outside_cable_label = 'Outside cable'
+inside_cable_label  = 'Inside cable'
+outside_cable_color = 'tab:blue'
+inside_cable_color  = 'tab:orange'
+
 # Plot backend mode for interactive display:
 #   'inline'  -> render in Spyder Plots pane (recommended on managed PCs)
 #   'window'  -> pop-up GUI windows (Qt/Tk backend)
@@ -295,8 +301,10 @@ fmask     = f_axis <= fmax_show
 ymax      = max(Amp_un[fmask].max(), Amp_fi[fmask].max()) * 1.1
 
 fig3 = plt.figure(figsize=(7, 4))
-plt.plot(f_axis[fmask], Amp_un[fmask], 'b-', lw=1.5, label='Unfiltered')
-plt.plot(f_axis[fmask], Amp_fi[fmask], 'r-', lw=1.5, label='Filtered')
+plt.plot(f_axis[fmask], Amp_un[fmask], '-', lw=1.5, color=outside_cable_color,
+         label=f'{outside_cable_label} (unfiltered)')
+plt.plot(f_axis[fmask], Amp_fi[fmask], '--', lw=1.5, color=outside_cable_color,
+         label=f'{outside_cable_label} (bandpass)')
 plt.axvline(Freq, color='k', linestyle='--', alpha=0.5, label=f'{Freq:.5f} Hz')
 plt.xlabel('Frequency (Hz)'); plt.ylabel('Amplitude (μm)')
 plt.title('Amplitude Spectrum — Outside Mean Displacement')
@@ -323,13 +331,17 @@ DispOut_filt = bandpass(DispOut_res, fs_d, bp_low, bp_high, bp_order)
 DispIn_filt  = bandpass(DispIn_res,  fs_d, bp_low, bp_high, bp_order)
 
 fig4, axes = plt.subplots(2, 1, figsize=(10, 7), sharex=True)
-axes[0].plot(tp, DispOut_res[::line_plot_step], label='Outside residual')
-axes[0].plot(tp, DispIn_res[::line_plot_step], label='Inside residual')
+axes[0].plot(tp, DispOut_res[::line_plot_step], color=outside_cable_color,
+             label=f'{outside_cable_label} residual')
+axes[0].plot(tp, DispIn_res[::line_plot_step], color=inside_cable_color,
+             label=f'{inside_cable_label} residual')
 axes[0].set_ylabel('Displacement (μm)')
 axes[0].set_title(f'Mean Displacement Residual (tone removed at {Freq_auto:.5f} Hz)')
 axes[0].legend(loc='upper right'); axes[0].grid(True)
-axes[1].plot(tp, DispOut_filt[::line_plot_step], label='Outside')
-axes[1].plot(tp, DispIn_filt[::line_plot_step],  label='Inside')
+axes[1].plot(tp, DispOut_filt[::line_plot_step], color=outside_cable_color,
+             label=outside_cable_label)
+axes[1].plot(tp, DispIn_filt[::line_plot_step],  color=inside_cable_color,
+             label=inside_cable_label)
 axes[1].set_ylabel('Displacement (μm)'); axes[1].set_xlabel('Time (s)')
 axes[1].set_title(f'Residual Bandpass {bp_low:.5f}–{bp_high:.5f} Hz')
 axes[1].legend(loc='upper right'); axes[1].grid(True)
@@ -355,21 +367,29 @@ ratio_raw = aIn_raw / aOut_raw if aOut_raw > 0 else np.nan
 ratio_bp  = aIn_bp  / aOut_bp  if aOut_bp  > 0 else np.nan
 
 fig5, axes = plt.subplots(2, 1, figsize=(11, 8), sharex=True)
-axes[0].plot(tp, dDispOut[::line_plot_step],  'b',   label='Outside (detrended)')
-axes[0].plot(tp, upOut_raw[::line_plot_step], 'b--', label='Upper Env Out')
-axes[0].plot(tp, loOut_raw[::line_plot_step], 'b--')
-axes[0].plot(tp, dDispIn[::line_plot_step],   'r',   label='Inside (detrended)')
-axes[0].plot(tp, upIn_raw[::line_plot_step],  'r--', label='Upper Env In')
-axes[0].plot(tp, loIn_raw[::line_plot_step],  'r--')
+axes[0].plot(tp, dDispOut[::line_plot_step], color=outside_cable_color,
+             label=f'{outside_cable_label} (detrended)')
+axes[0].plot(tp, upOut_raw[::line_plot_step], '--', color=outside_cable_color,
+             label=f'{outside_cable_label} envelope')
+axes[0].plot(tp, loOut_raw[::line_plot_step], '--', color=outside_cable_color)
+axes[0].plot(tp, dDispIn[::line_plot_step], color=inside_cable_color,
+             label=f'{inside_cable_label} (detrended)')
+axes[0].plot(tp, upIn_raw[::line_plot_step], '--', color=inside_cable_color,
+             label=f'{inside_cable_label} envelope')
+axes[0].plot(tp, loIn_raw[::line_plot_step], '--', color=inside_cable_color)
 axes[0].set_ylabel('Displacement (μm)')
 axes[0].set_title(f'Residual (tone removed) — P-P Out: {aOut_raw:.3f} μm | P-P In: {aIn_raw:.3f} μm | Ratio: {ratio_raw:.4f} ({ratio_raw*100:.1f}%)')
 axes[0].legend(ncol=2, loc='upper right'); axes[0].grid(True)
-axes[1].plot(tp, DispOut_filt[::line_plot_step], 'b',   label='Outside (bandpass)')
-axes[1].plot(tp, upOut_bp[::line_plot_step],     'b--', label='Upper Env Out')
-axes[1].plot(tp, loOut_bp[::line_plot_step],     'b--')
-axes[1].plot(tp, DispIn_filt[::line_plot_step],  'r',   label='Inside (bandpass)')
-axes[1].plot(tp, upIn_bp[::line_plot_step],      'r--', label='Upper Env In')
-axes[1].plot(tp, loIn_bp[::line_plot_step],      'r--')
+axes[1].plot(tp, DispOut_filt[::line_plot_step], color=outside_cable_color,
+             label=f'{outside_cable_label} (bandpass)')
+axes[1].plot(tp, upOut_bp[::line_plot_step], '--', color=outside_cable_color,
+             label=f'{outside_cable_label} envelope')
+axes[1].plot(tp, loOut_bp[::line_plot_step], '--', color=outside_cable_color)
+axes[1].plot(tp, DispIn_filt[::line_plot_step], color=inside_cable_color,
+             label=f'{inside_cable_label} (bandpass)')
+axes[1].plot(tp, upIn_bp[::line_plot_step], '--', color=inside_cable_color,
+             label=f'{inside_cable_label} envelope')
+axes[1].plot(tp, loIn_bp[::line_plot_step], '--', color=inside_cable_color)
 axes[1].set_ylabel('Displacement (μm)'); axes[1].set_xlabel('Seconds')
 axes[1].set_title(f'Residual bandpass {bp_low:.5f}–{bp_high:.5f} Hz — P-P Out: {aOut_bp:.3f} μm | P-P In: {aIn_bp:.3f} μm | Ratio: {ratio_bp:.4f} ({ratio_bp*100:.1f}%)')
 axes[1].legend(ncol=2, loc='upper right'); axes[1].grid(True)
