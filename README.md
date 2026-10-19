@@ -24,4 +24,24 @@ For thesis-facing reporting in this snippet, use imperial units only:
 - Preprocesses DAS TDMS data into analysis-ready files
 - Runs strain/displacement analysis for gravity and air-liner coupling cases
 - Produces exploratory plots and transfer-ratio metrics for comparison across runs
-- Labels cable traces by cable color in figure legends for quick visual tracking
+
+## Cable layout and figure color labels
+
+Four cables run through the PVC and are fusion-spliced into one continuous fiber
+so a single interrogator records them at once:
+
+- Simplex Singlemode Plenum (TLC S09SX01CZNPY12), used as the reference and
+  Gorilla-taped to the PVC exterior
+- BRUsens Acoustic
+- BRUsens Strain V4
+- AFL FIMT (1/8 in diameter, thixotropic gel fill; singlemode x1, multimode x2)
+
+In the analysis figures, section labels (Reference, Yellow, Green, Blue, Steel)
+mark 10-channel averages along that spliced fiber path.
+
+Color mapping:
+
+- Yellow = Simplex (reference)
+- Green = BRUsens Acoustic
+- Blue = BRUsens Strain V4
+- Steel = AFL FIMT
