@@ -37,13 +37,12 @@ Four cables run through the PVC and are **fusion-spliced into one continuous fib
 
 In the analysis figures, section labels (**Reference**, **Yellow**, **Green**, **Blue**, **Steel**) mark 10-channel averages along that spliced fiber path.
 
-### Coupling configurations (Experiment 1)
+### Coupling configurations
 
 - **Gravity (uncoupled).** Cables rest in the PVC under their own weight.
-- **Air-inflated liner.** A liner inflated to **5 psi** presses the cables against the PVC wall.
-- **Tube-in-tube (additional config).** A ~2 in PVC tube inside the 4 in section, with cables inserted through a longitudinal slot, simulates fiber inside coiled tubing. Example figures below focus on gravity vs the air-inflated liner.
+- **Air-inflated liner.** A liner inflated between **2.5 and 5 psi** presses the cables against the PVC wall.
+- **Tube-in-tube (additional config).** A 0.5 in PVC tube inside the 4 in section, with cables inserted through a longitudinal slot, simulates fiber inside coiled tubing. Example figures below focus on gravity vs the air-inflated liner.
 
-A second experiment (cables epoxied to the pipe) isolates cable-construction effects under near-ideal coupling and is outside the figure sets shown here.
 
 ### Acquisition
 
