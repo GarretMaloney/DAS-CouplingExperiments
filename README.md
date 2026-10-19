@@ -37,6 +37,13 @@ Four cables run through the PVC and are **fusion-spliced into one continuous fib
 
 In the analysis figures, section labels (**Reference**, **Yellow**, **Green**, **Blue**, **Steel**) mark 10-channel averages along that spliced fiber path.
 
+Color mapping for those labels:
+
+- **Yellow** = Simplex (reference)
+- **Green** = BRUsens Acoustic
+- **Blue** = BRUsens Strain V4
+- **Steel** = AFL FIMT
+
 ### Coupling configurations
 
 - **Gravity (uncoupled).** Cables rest in the PVC under their own weight.
