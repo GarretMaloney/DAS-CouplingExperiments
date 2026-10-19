@@ -38,8 +38,9 @@ show_plots = True
 save_figures = False
 
 # Cable legend/color mapping (kept consistent across all line plots)
-outside_cable_label = 'Outside cable'
-inside_cable_label  = 'Inside cable'
+# Labels explicitly include cable color for faster visual identification.
+outside_cable_label = 'Blue cable (outside)'
+inside_cable_label  = 'Orange cable (inside)'
 outside_cable_color = 'tab:blue'
 inside_cable_color  = 'tab:orange'
 
@@ -410,6 +411,7 @@ print(f"  Auto frequency      : {Freq_auto:.5f} Hz")
 print(f"  Bandpass            : {bp_low:.5f} – {bp_high:.5f} Hz")
 print(f"  Outside channels    : {list(outside_range)}")
 print(f"  Inside channels     : {list(inside_range)}")
+print(f"  Legend labeling     : {outside_cable_label}; {inside_cable_label}")
 print(f"  {'Method':<22} {'P-P OUT':>9} {'P-P IN':>9} {'Ratio':>14}")
 print(f"  {'-'*56}")
 print(f"  {'Residual':<22} {aOut_raw:>7.3f} μm {aIn_raw:>7.3f} μm {ratio_raw:>7.4f} ({ratio_raw*100:.1f}%)")

@@ -24,3 +24,4 @@ For thesis-facing reporting in this snippet, use imperial units only:
 - Preprocesses DAS TDMS data into analysis-ready files
 - Runs strain/displacement analysis for gravity and air-liner coupling cases
 - Produces exploratory plots and transfer-ratio metrics for comparison across runs
+- Labels cable traces by cable color in figure legends for quick visual tracking
