@@ -2,7 +2,7 @@
 
 *Thesis research on how cable coupling controls fiber-optic strain sensitivity.*
 
-Low-frequency Distributed Acoustic Sensing (LF-DAS) can be used to monitor formation strain when employed in a well casing during hydraulic stimulation or pump testing, but the fiber only records motion that is mechanically transferred into it. This project quantifies that transfer in a laboratory well-casing analog: a controlled axial strain is applied to PVC “casing,” while multiple fiber cables inside the pipe are interrogated simultaneously. Coupling is varied between **gravity seating alone** and an **air-inflated liner** that presses the cables against the wall. Example results below compare the same 7 V drive at **1 Hz** and **0.001 Hz**.
+Low-frequency Distributed Acoustic Sensing (LF-DAS) can be used to monitor formation strain when employed in a well casing during hydraulic stimulation or pump testing, but the fiber only records motion that is mechanically transferred into it. This project quantifies that transfer in a laboratory well-casing analog: a controlled axial strain is applied to PVC “casing,” while multiple fiber cables inside the pipe are interrogated simultaneously. Coupling is varied between **gravity coupling alone** and an **air-inflated liner** that presses the cables against the wall. Example results below compare the same 7 V drive at **1 Hz** and **0.001 Hz**.
 
 ## Experimental setup
 
@@ -57,8 +57,8 @@ The committed figures are from gravity vs liner-coupled runs at **7 V** generato
 |-----------|----------|-----------------|------------|
 | Air-inflated liner | 5 psi | 1 Hz | [`figures/liner_5psi_1hz_7v/`](figures/liner_5psi_1hz_7v/) |
 | Air-inflated liner | 5 psi | 0.001 Hz (1 mHz) | [`figures/liner_5psi_0.001hz_7v/`](figures/liner_5psi_0.001hz_7v/) |
-| Gravity | Gravity seating only | 1 Hz | [`figures/gravity_1hz_7v/`](figures/gravity_1hz_7v/) |
-| Gravity | Gravity seating only | 0.001 Hz (1 mHz) | [`figures/gravity_0.001hz_7v/`](figures/gravity_0.001hz_7v/) |
+| Gravity | Gravity coupling only | 1 Hz | [`figures/gravity_1hz_7v/`](figures/gravity_1hz_7v/) |
+| Gravity | Gravity coupling only | 0.001 Hz (1 mHz) | [`figures/gravity_0.001hz_7v/`](figures/gravity_0.001hz_7v/) |
 
 Strain-transfer ratio = peak-to-peak displacement of a test section ÷ simultaneous reference-fiber amplitude.
 
