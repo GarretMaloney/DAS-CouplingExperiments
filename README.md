@@ -4,6 +4,9 @@
 
 Low-frequency Distributed Acoustic Sensing (LF-DAS) can be used to monitor formation strain when employed in a well casing during hydraulic stimulation or pump testing, but the fiber only records motion that is mechanically transferred into it. This project quantifies that transfer in a laboratory well-casing analog: a controlled axial strain is applied to PVC “casing,” while multiple fiber cables inside the pipe are interrogated simultaneously. Coupling is varied between **gravity coupling alone** and an **air-inflated liner** that presses the cables against the wall. Example results below compare the same 7 V drive at **1 Hz** and **0.001 Hz**.
 
+This repository is a focused portion of my thesis research, not the full set of
+test conditions in the thesis.
+
 ## Experimental setup
 
 **Drive electronics** — Uni-Trend UTG1022X function generator and PiezoDrive PDu150 amplifier used to drive the piezoelectric actuators:
@@ -48,7 +51,6 @@ Color mapping for those labels:
 
 - **Gravity (uncoupled).** Cables rest in the PVC under their own weight.
 - **Air-inflated liner.** A liner inflated between **2.5 and 5 psi** presses the cables against the PVC wall.
-- **Tube-in-tube (additional config).** A 0.5 in PVC tube inside the 4 in section, with cables inserted through a longitudinal slot, simulates fiber inside coiled tubing. Example figures below focus on gravity vs the air-inflated liner.
 
 
 ### Acquisition
