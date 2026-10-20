@@ -4,8 +4,7 @@
 
 Low-frequency Distributed Acoustic Sensing (LF-DAS) can be used to monitor formation strain when employed in a well casing during hydraulic stimulation or pump testing, but the fiber only records motion that is mechanically transferred into it. This project quantifies that transfer in a laboratory well-casing analog: a controlled axial strain is applied to PVC “casing,” while multiple fiber cables inside the pipe are interrogated simultaneously. Coupling is varied between **gravity coupling alone** and an **air-inflated liner** that presses the cables against the wall. Example results below compare the same 7 V drive at **1 Hz** and **0.001 Hz**.
 
-This repository is a focused portion of my thesis research, not the full set of
-test conditions in the thesis.
+This repository is a focused portion of my thesis research to highlight equipment and scripts used to perform and analyze experiments and demonstrate strain transfer dependency on frequency and coupling conditions.
 
 ## Experimental setup
 
